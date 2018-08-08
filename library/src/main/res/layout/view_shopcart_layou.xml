@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+
+    <View
+        android:id="@+id/shopcart_backgroup_view"
+        android:background="#aa000000"
+        android:visibility="gone"
+        android:layout_above="@+id/common_bottom_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <RelativeLayout
+        android:id="@+id/common_content_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:layout_above="@+id/common_bottom_rl">
+
+        <RelativeLayout
+            android:id="@+id/common_content_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/titlebg"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="已选商品"
+                android:textColor="@color/background_bg"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/shopcart_content_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="@string/clear"
+                android:drawablePadding="3dp"
+                android:drawableLeft="@drawable/common_ic_clearhistory"
+                android:textColor="@color/background_bg"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/shopcart_item_rv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/common_content_title" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/common_bottom_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:background="@color/background_bg"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <ImageView
+            android:id="@+id/shop_cart_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/shopcart_background_shape"
+            android:paddingTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_cart_default"
+            android:translationY="-15dp" />
+
+        <TextView
+            android:id="@+id/shopcart_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/shop_cart_iv"
+            android:textColor="@color/shopcart_price_color"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/shopcart_tip_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shopcart_price_tv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/shop_cart_iv"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+
+        <TextView
+            android:id="@+id/shopcart_charge_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:background="@drawable/btn_confirm_selector"
+            android:enabled="true"
+            android:gravity="center"
+            android:textColor="@drawable/shopcart_charge_color_selectors"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/shopcart_num_tv"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/shopcart_num_shape"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:translationY="-15dp" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/businessState"
+        android:background="@color/background_bg"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="@string/businessState"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+</RelativeLayout>

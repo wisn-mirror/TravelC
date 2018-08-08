@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mainColor">#FF6900</color>
+    <color name="transparent">#FFFFFFFF</color>
+    <color name="red">#FE3737</color>
+
+    <color name="titlebg">#0b0b0b</color>
+    <color name="background_bg">#fff</color>
+    <color name="shopcart_price_color">#FDFBFB</color>
+    <color name="shopcart_des_color">#666666</color>
+    <color name="title_textColor">#fff</color>
+    <color name="color_dddddd">#FFDDDDDD</color>
+    <color name="lib_line_color">#F0F0F0</color>
+    <color name="line_color_grey">#cacaca</color>
+    <color name="blue_color">#2CB2FF</color>
+    <color name="orige_color">#FFCC00</color>
+    <color name="list_color">#efebeb</color>
+
+    <color name="colorPrimary">#FF6900</color>
+    <color name="colorPrimaryDark">#FF6900</color>
+    <color name="colorAccent">#FF6900</color>
+    <color name="theme_color">#FF6900</color>
+    <color name="warn_bg">#fffbc5</color>
+    <color name="c80">#808080</color>
+    <color name="cb2">#b2b2b2</color>
+    <color name="cyellow">#ffb400</color>
+    <color name="commend_btn_background">#fff5ed</color>
+    <color name="cfo">#f0f0f0</color>
+    <!-- 分割线颜色-->
+    <color name="divider_color">#dddddd</color>
+
+    <!--购物车促销标签背景色-->
+    <color name="changesale_lable">#b9be67</color>
+    <color name="line_color">#DDDDDD</color>
+
+    <color name="aliwx_common_text_color">#f9f9f9</color>
+
+
+    <color name="bg_color">#f3f3f3</color>
+    <color name="green_deep_text">#00cc00</color>
+    <color name="darkgray3">#ff505050</color>
+    <!--橘黄色-->
+    <color name="saffron_yellow">#ff6900</color>
+    <color name="c_ff690">#ff6900</color>
+    <color name="ffeadb">#ffeadb</color>
+    <color name="e5e5e5">#e5e5e5</color>
+    <color name="gray_6">#666666</color>
+
+    <color name="six_3">#333333</color>
+    <color name="three_b2">#b2b2b2</color>
+
+    <color name="black">#000000</color>
+
+    <color name="text_max_grey">#333333</color>
+    <color name="text_med_grey">#666666</color>
+    <color name="text_min_grey">#999999</color>
+    <color name="white">#ffffff</color>
+    <!-- 页面背景色-->
+    <color name="background_color">#f5f5f5</color>
+    <!-- EditText hint颜色-->
+    <color name="edittext_hint_color">#666666</color>
+    <!-- 主题按扭文字颜色-->
+    <color name="button_text_color">#ffffff</color>
+    <!-- 正标题颜色-->
+    <color name="main_title_color">#333333</color>
+    <!-- 次标题颜色-->
+    <color name="sub_title_color">#666666</color>
+    <!-- 注释、补充内容颜色-->
+    <color name="note_color">#999999</color>
+    <!--广告背景色-->
+    <color name="advertisement_backgrond">#FFFAC4</color>
+    <!--浅白色背景-->
+    <color name="tint_white_background">#fafafa</color>
+
+
+</resources>

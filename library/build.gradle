@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion app.compileSdkVersion
+    buildToolsVersion app.buildToolsVersion
+    defaultConfig {
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+        publishNonDefault true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility app.sourceCompatibility
+        targetCompatibility app.targetCompatibility
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile supportDependencies.cardview
+    compile supportDependencies.appCompat
+    compile supportDependencies.recyclerview
+    compile supportDependencies.design
+    compile supportDependencies.constraint
+    compile supportDependencies.annotations
+    compile supportDependencies.multidex
+    compile thirdDependencies.glide
+    compile thirdDependencies.cymchad
+    compile thirdDependencies.okhttp
+    compile thirdDependencies.gson
+    compile thirdDependencies.rxjava
+    compile thirdDependencies.rxandroid
+    compile thirdDependencies.retrofit
+    compile thirdDependencies.gsonConverter
+    compile thirdDependencies.rxjavaAdapter
+    compile thirdDependencies.arouter
+    compile thirdDependencies.zxing
+    compile thirdDependencies.pickerview
+    compile thirdDependencies.eventbus
+    compile thirdDependencies.snackbar
+    compile thirdDependencies.rxPermissions
+    compile thirdDependencies.photoview
+    compile files('libs/tbs_sdk_thirdapp_v3.6.0.1183_43604_sharewithdownload_withoutGame_obfs_20180211_105126.jar')
+    compile files('libs/AMap2DMap_3.0.0_AMapSearch_3.6.1_AMapLocation_3.2.1_20161228.jar')
+}

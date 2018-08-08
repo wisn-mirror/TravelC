@@ -1,0 +1,3 @@
+[submodule "im"]
+	path = im
+	url = git@10.3.3.127:laiyifen-mall/Android_im_lib.git

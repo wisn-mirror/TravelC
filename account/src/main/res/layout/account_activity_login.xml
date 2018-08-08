@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/lib_view_title_head"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="30dp"
+            android:gravity="left|center"
+            android:text="欢迎来到来伊份"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_account"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_below="@+id/tv_welcome"
+            android:layout_marginTop="30dp">
+
+            <EditText
+                android:id="@+id/et_account"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="请输入账号"
+                android:text="1Z01"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/iv_account_close"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:src="@mipmap/account_btn_close" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/line_color_grey" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_password"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_below="@+id/rl_account">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:text="lyf123456"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/iv_passsword_close"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:padding="8dp"
+                android:visibility="invisible"
+                android:src="@mipmap/account_btn_close" />
+
+            <ImageView
+                android:id="@+id/iv_passsword_eye"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/iv_passsword_close"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:src="@mipmap/account_login_btn_eyes2" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/line_color_grey" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/rl_password"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
+            android:gravity="right|center"
+            android:text="登录 >"
+            android:textColor="@color/mainColor"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_forgetpassword"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:text="忘记密码请联系"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+apply plugin: 'walle'
+apply plugin: 'com.alibaba.arouter'
+
+android {
+    compileSdkVersion app.compileSdkVersion
+    buildToolsVersion app.buildToolsVersion
+    defaultConfig {
+        multiDexEnabled true
+        applicationId app.applicationId
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+        ndk {
+            //如果项目只包含了 armeabi，那么在所有Android设备都可以运行；
+            // 如果项目只包含了 armeabi-v7a，除armeabi架构的设备外都可以运行； 如果项目只包含了 x86，那么armeabi架构和armeabi-v7a的Android设备是无法运行的；
+            // 如果同时包含了 armeabi， armeabi-v7a和x86，所有设备都可以运行，程序在运行的时候去加载不同平台对应的so，这是较为完美的一种解决方案，同时也会导致包变大。
+            //arm64-v8a是可以向下兼容的，其下有armeabi-v7a，armeabi
+            //armeabi-v7a向下兼容armeabi
+            //设置支持的SO库架构（X5内核需求）
+            abiFilters "armeabi", "armeabi-v7a"
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+//        dexOptions {
+//            additionalParameters = ["--minimal-main-dex"]
+//        }
+    }
+    compileOptions {
+        sourceCompatibility app.sourceCompatibility
+        targetCompatibility app.targetCompatibility
+    }
+
+    signingConfigs {
+        release {
+            Properties properties = new Properties()
+            InputStream inputStream = rootProject.file('local.properties').newDataInputStream()
+            properties.load(inputStream)
+            storeFile file(properties.getProperty('RELEASE_STOREFILE'))
+            keyAlias properties.getProperty('RELEASE_KEY_ALIAS')
+            keyPassword properties.getProperty('RELEASE_KEY_PASSWORD')
+            storePassword properties.getProperty('RELEASE_STOREPASSWORD')
+
+        }
+    }
+    //这个是解决lint报错的代码
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            manifestPlaceholders = [appName     : "@string/app_name_release"
+                                    , AMAP_KEY  : "ee20324fba1c7f4ad7a4a207e7f08e8d"
+                                    , HUAWEI_KEY: "100006871"]
+            buildConfigField("String", "BASEURL", "\"http://shop.laiyifen.com\"")
+            buildConfigField("String", "H5URL", "\"http://m.stg.laiyifen.com\"")
+            buildConfigField("String", "BUGLYID", "\"516e65f343\"")
+            buildConfigField("String", "IMUrl", "\"http://api.laiyifen.com/\"")
+            buildConfigField("String", "xiaomiAppid", "\"2882303761517502883\"")
+            buildConfigField("String", "xiaomiAppkey", "\"5671750254883\"")
+            buildConfigField("String", "im_appKey", "\"9d2723f5e643cf0333e900f18c6e05a9\"")
+            buildConfigField("String", "im_appSecret", "\"b8ab95a431cf\"")
+            minifyEnabled false
+            debuggable true
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        stg {
+            manifestPlaceholders = [appName     : "@string/app_name_stg"
+                                    , AMAP_KEY  : "ee20324fba1c7f4ad7a4a207e7f08e8d"
+                                    , HUAWEI_KEY: "100006871"]
+            buildConfigField("String", "BASEURL", "\"http://api.stg.laiyifen.com\"")
+            buildConfigField("String", "H5URL", "\"http://m.stg.laiyifen.com\"")
+            buildConfigField("String", "BUGLYID", "\"516e65f343\"")
+            buildConfigField("String", "IMUrl", "\"http://api.stg.laiyifen.com/\"")
+            buildConfigField("String", "xiaomiAppid", "\"2882303761517502883\"")
+            buildConfigField("String", "xiaomiAppkey", "\"5671750254883\"")
+            buildConfigField("String", "im_appKey", "\"9d2723f5e643cf0333e900f18c6e05a9\"")
+            buildConfigField("String", "im_appSecret", "\"b8ab95a431cf\"")
+            minifyEnabled false
+            debuggable true
+            shrinkResources false
+            applicationIdSuffix ".stg"
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            matchingFallbacks = [ 'release']
+        }
+        debug {
+            manifestPlaceholders = [appName     : "@string/app_name_edu"
+                                    , AMAP_KEY  : "09fd4efd3e28e9bf1f449ecec7d34bfe"
+                                    , HUAWEI_KEY: "b563884125"]
+            buildConfigField("String", "BASEURL", "\"http://api.lyf.edu.laiyifen.com\"")
+            buildConfigField("String", "H5URL", "\"http://m.lyf.edu.laiyifen.com\"")
+            buildConfigField("String", "BUGLYID", "\"516e65f343\"")
+            buildConfigField("String", "IMUrl", "\"http://m.lyf.dev.laiyifen.com/\"")
+            buildConfigField("String", "xiaomiAppid", "\"2882303761517502883\"")
+            buildConfigField("String", "xiaomiAppkey", "\"5671750254883\"")
+            buildConfigField("String", "im_appKey", "\"c27ff274a5ed7acf4948fb550eb08e93\"")
+            buildConfigField("String", "im_appSecret", "\"96788bed2905\"")
+            minifyEnabled false
+            debuggable true
+            applicationIdSuffix ".edu"
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            matchingFallbacks = ['debug']
+        }
+
+    }
+    splits {
+       abi {
+           enable true
+           reset()
+           include 'armeabi','x86'
+           universalApk false
+       }
+   }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile(name: 'HMS-SDK-2.4.0.300', ext: 'aar')
+    implementation thirdDependencies.walle
+    implementation thirdDependencies.bugly
+    annotationProcessor thirdDependencies.arouter_compiler
+    implementation project(':library')
+    if (!isModule.toBoolean()) {
+        implementation project(':account')
+        implementation project(':classification')
+        implementation project(':community')
+        implementation project(':homepager')
+        implementation project(':mediaselector')
+        implementation project(':shopcart')
+        implementation project(':update')
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${channel}-${appName}-${packageName}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+    // 渠道配置文件
+    channelFile = new File("${project.getProjectDir()}/channel")
+}

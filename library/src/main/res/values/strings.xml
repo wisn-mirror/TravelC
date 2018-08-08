@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="srl_header_pulling">Pull Down To Refresh</string>
+    <string name="srl_header_release">Release To Refresh</string>
+    <string name="srl_header_refreshing">Refreshing…</string>
+    <string name="srl_header_loading">Loading…</string>
+    <string name="srl_header_finish">Refresh Success</string>
+    <string name="srl_header_failed">Refresh Failed</string>
+    <string name="srl_header_update">\'Last Update\' M-d HH:mm</string>
+    <string name="srl_header_secondary">Release To Second Floor</string>
+    <string name="a_o_load_faile">啊哦~加载失败!</string>
+    <string name="Network_convulsions_please_checking">网络抽风了，请检查后重试~</string>
+    <string name="loading_waiting">努力加载中...</string>
+    <string name="srl_footer_pulling">Pull Up To Load More</string>
+    <string name="srl_footer_release">Release To Load More</string>
+    <string name="srl_footer_loading">Loading…</string>
+    <string name="srl_footer_refreshing">Refreshing…</string>
+    <string name="srl_footer_finish">Load Success</string>
+    <string name="srl_footer_failed">Load Failed</string>
+    <string name="srl_footer_nothing">No More Data</string>
+
+    <string name="srl_content_empty">The content view in SmartRefreshLayout is empty. Do you forget to add it in xml layout file?</string>
+    <string name="srl_component_falsify" formatted="false">%s falsify area,\n Represents the height[%.1fdp] of drag at run time,\n It does not show anything.</string>
+    <string name="app_name_release">来伊份商城</string>
+    <string name="app_name_stg">来伊份商城Stg</string>
+    <string name="app_name_edu">来伊份商城edu</string>
+
+    <string name="sale_over">售罄</string>
+    <string name="clear">清空</string>
+    <string name="delete">删除</string>
+    <string name="quit">退出</string>
+    <string name="editor">编辑</string>
+    <string name="businessState">本店打烊啦</string>
+    <string name="delivery_stand">配送 ¥%s</string>
+    <string name="delivery_price">起送 ¥%s</string>
+    <string name="delivery_distance">距离 %s</string>
+    <string name="already_authentication">已认证</string>
+    <string name="unalready_authentication">未认证</string>
+</resources>

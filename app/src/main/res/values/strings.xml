@@ -1,0 +1,9 @@
+<resources>
+    <string name="main_home">首页</string>
+    <string name="main_classification">分类</string>
+    <string name="main_chat">无聊</string>
+    <string name="main_shopcart">购物车</string>
+    <string name="main_mine">我的</string>
+
+
+</resources>

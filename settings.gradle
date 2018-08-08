@@ -1,0 +1,7 @@
+include ':app',
+        ':mediaselector',
+        ':zxing',
+        ':library',
+        ':homepager',
+        ':account',
+        ':update'

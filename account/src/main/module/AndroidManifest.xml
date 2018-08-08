@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.travel.account">
+
+    <application
+        android:name="debug.ModuleApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/lib_ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:theme,name,icon,allowBackup,label">
+        <activity android:name=".login.LoginActivity">
+        <!--<activity android:name=".changpwd.ChangePasswordActivity">-->
+        <!--<activity android:name=".systemsetting.SystemSettingActivity">-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

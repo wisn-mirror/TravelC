@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    tools:context="com.travel.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/rg_main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:elevation="2dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/home_waitcourse_yellow_shape"
+        android:orientation="horizontal">
+
+        <com.travel.library.view.tipview.TipRadioButton
+            android:id="@+id/rb_homepage"
+            style="@style/radiobutton_style"
+            android:checked="true"
+            android:text="@string/main_home"
+            app:tipText="33"
+            app:drawableTop="@drawable/app_select_home" />
+
+        <com.travel.library.view.tipview.TipRadioButton
+            android:id="@+id/rb_classification"
+            style="@style/radiobutton_style"
+            android:text="@string/main_classification"
+            app:tipText="334"
+            app:drawableTop="@drawable/app_select_classification" />
+
+        <com.travel.library.view.tipview.TipRadioButton
+            android:id="@+id/rb_im"
+            style="@style/radiobutton_style"
+            android:text="@string/main_chat"
+            app:isTip="true"
+            app:drawableTop="@drawable/app_select_im" />
+
+        <com.travel.library.view.tipview.TipRadioButton
+            android:id="@+id/rb_shopcart"
+            style="@style/radiobutton_style"
+            android:text="@string/main_shopcart"
+            app:drawableTop="@drawable/app_select_shopcart" />
+
+        <com.travel.library.view.tipview.TipRadioButton
+            android:id="@+id/rb_mine"
+            style="@style/radiobutton_style"
+            android:text="@string/main_mine"
+            app:drawableTop="@drawable/app_select_mine" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/view_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/rg_main_bottom"
+        android:background="@color/divider_color"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/centerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rg_main_bottom"
+        android:background="#fff" />
+
+
+</RelativeLayout>
